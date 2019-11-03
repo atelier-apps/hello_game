@@ -40,7 +40,6 @@ window.onload=function(){
     }
   };
 
-  init();
   let cycle=function(){
     main();
     render();
@@ -48,6 +47,8 @@ window.onload=function(){
       cycle();
     },GAME.MS_PER_FRAME);
   };
+
+  init();
   start();
   cycle();
 
