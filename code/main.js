@@ -37,6 +37,12 @@ function start(){
 }
 
 function main(){
-  let dx= GAME.keyStatus[GAME.KEY.RIGHT]==true ? 1 : 0;
-  ball.move(dx,0);
+  let dx1= GAME.keyStatus[GAME.KEY.RIGHT]==true ? 1 : 0;
+  ball.move(dx1,0);
+  let dx2= GAME.keyStatus[GAME.KEY.LEFT]==true ? 1 : 0;
+  ball.move(-dx2,0);
+  let dy1= GAME.keyStatus[GAME.KEY.UP]==true ? 1 : 0;
+  ball.move(0,-dy1);
+  let dy2= GAME.keyStatus[GAME.KEY.DOWN]==true ? 1 : 0;
+  ball.move(0,dy2);
 }

@@ -10,6 +10,9 @@ GAME.MS_PER_FRAME=40;
 //キーコード
 GAME.KEY={}
 GAME.KEY.RIGHT=39;
+GAME.KEY.LEFT=37;
+GAME.KEY.UP=38;
+GAME.KEY.DOWN=40;
 
 // 大域変数
 GAME.canvas;
@@ -41,6 +44,7 @@ window.onload=function(){
   };
 
   let cycle=function(){
+    console.log("aca");
     main();
     render();
     setTimeout(function(){
