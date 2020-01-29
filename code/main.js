@@ -17,7 +17,7 @@ class Character{
 
 class Player extends Character{
   constructor(x,y){
-    super(x,y);
+    super(x*GAME.STEP_SIZE_PX,y*GAME.STEP_SIZE_PX);
   }
   draw(){
     GAME.ctx.fillStyle = "#1e90ff";
@@ -25,6 +25,18 @@ class Player extends Character{
   }
   move(dx,dy){
     super.move(GAME.STEP_SIZE_PX*dx,GAME.STEP_SIZE_PX*dy);
+    /*横向きにゲーム画面内からはみ出さないようにする*/
+    if(this.x<0){
+      this.x=0;
+    }else if(this.x>GAME.canvas.width-GAME.STEP_SIZE_PX){
+      this.x=GAME.canvas.width-GAME.STEP_SIZE_PX;
+    }
+    /*縦向きにゲーム画面内からはみ出さないようにする*/
+    if(this.y<0){
+      this.y=0;
+    }else if(this.y>GAME.canvas.height-GAME.STEP_SIZE_PX){
+      this.y=GAME.canvas.height-GAME.STEP_SIZE_PX;
+    }
   }
 }
 
